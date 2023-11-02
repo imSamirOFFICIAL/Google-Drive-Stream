@@ -78,7 +78,7 @@ For more option, see APlayer [options](https://aplayer.js.org/#/home?id=options)
 
 ## Change log
 
-### v2.0.11
+### v2.0.12
 
 - Fix image file actions does not work
 - Fix misjudged file to image format
