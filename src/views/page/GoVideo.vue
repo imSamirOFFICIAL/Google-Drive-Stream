@@ -28,51 +28,6 @@
         </video>
       </vue-plyr>
     </div>
-    <div class="card">
-      <header class="card-header">
-        <p class="card-header-title">
-          <span class="icon">
-            <i class="fa fa-play-circle" aria-hidden="true"></i>
-          </span>
-          {{ $t("page.video.play") }} /
-          <span class="icon">
-            <i class="fa fa-download" aria-hidden="true"></i>
-          </span>
-          {{ $t("page.video.download") }}
-        </p>
-      </header>
-      <div class="card-content">
-        <div class="content">
-          <div class="field">
-            <label class="label">
-              {{ $t("page.video.link") }}
-              <a class="button is-text index-button-copy" @click="copy">
-                {{ $t("copy.text") }}
-              </a>
-            </label>
-            <div class="control">
-              <input class="input" type="text" :value="videoUrl" />
-            </div>
-          </div>
-          <div class="columns is-mobile is-multiline has-text-centered">
-            <div
-              class="column"
-              v-for="(item, index) in players"
-              v-bind:key="index"
-            >
-              <p class="heading">
-                <a :href="item.scheme">
-                  <figure class="image is-48x48" style="margin: 0 auto;">
-                    <img class="icon" :src="item.icon" />
-                  </figure>
-                </a>
-              </p>
-              <p class>{{ item.name }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -166,7 +121,6 @@ export default {
           "settings",
           "pip",
           "airplay",
-          "download",
           "fullscreen",
         ],
         ...options,
@@ -175,69 +129,6 @@ export default {
     },
     player() {
       return this.$refs.plyr.player;
-    },
-    url() {
-      if (this.$route.params.path) {
-        return decode64(this.$route.params.path);
-      }
-      return "";
-    },
-    players() {
-      return [
-        {
-          name: "IINA",
-          icon: this.$cdnpath("images/player/iina.png"),
-          scheme: "iina://weblink?url=" + this.videoUrl,
-        },
-        {
-          name: "PotPlayer",
-          icon: this.$cdnpath("images/player/potplayer.png"),
-          scheme: "potplayer://" + this.videoUrl,
-        },
-        {
-          name: "VLC",
-          icon: this.$cdnpath("images/player/vlc.png"),
-          scheme: "vlc://" + this.videoUrl,
-        },
-        {
-          name: "Thunder",
-          icon: this.$cdnpath("images/player/thunder.png"),
-          scheme: "thunder://" + this.getThunder,
-        },
-        {
-          name: "Aria2",
-          icon: this.$cdnpath("images/player/aria2.png"),
-          scheme: 'javascript:alert("暂未实现")',
-        },
-        {
-          name: "nPlayer",
-          icon: this.$cdnpath("images/player/nplayer.png"),
-          scheme: "nplayer-" + this.videoUrl,
-        },
-        {
-          name: "MXPlayer(Free)",
-          icon: this.$cdnpath("images/player/mxplayer.png"),
-          scheme:
-            "intent:" +
-            this.videoUrl +
-            "#Intent;package=com.mxtech.videoplayer.ad;S.title=" +
-            this.title +
-            ";end",
-        },
-        {
-          name: "MXPlayer(Pro)",
-          icon: this.$cdnpath("images/player/mxplayer.png"),
-          scheme:
-            "intent:" +
-            this.videoUrl +
-            "#Intent;package=com.mxtech.videoplayer.pro;S.title=" +
-            this.title +
-            ";end",
-        },
-      ];
-    },
-    getThunder() {
-      return Buffer.from("AA" + this.videoUrl + "ZZ").toString("base64");
     },
   },
 };
