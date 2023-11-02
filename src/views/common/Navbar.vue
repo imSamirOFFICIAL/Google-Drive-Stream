@@ -5,18 +5,6 @@
         <a class="navbar-item" :href="currgd.id">
           <h3 class="title is-3 has-text-white">{{ siteName }}</h3>
         </a>
-        <a
-          role="button"
-          :class="'navbar-burger burger ' + (isActive ? 'is-active' : '')"
-          aria-label="menu"
-          aria-expanded="false"
-          data-target="navbarBasicExample"
-          @click="burgerClick"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
       </div>
       <div
         id="navbarBasicExample"
