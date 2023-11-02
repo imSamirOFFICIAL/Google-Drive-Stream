@@ -1,8 +1,5 @@
 <template>
   <div class="navbar-item has-dropdown is-hoverable">
-    <a class="navbar-link is-arrowless">
-      <i class="fa fa-language"></i>
-    </a>
     <div class="navbar-dropdown is-left">
       <a
         :class="'navbar-item'+(currLanguage===language.value?' is-active':'')"
