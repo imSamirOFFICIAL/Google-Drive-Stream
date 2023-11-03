@@ -66,7 +66,7 @@ var  authConfig  =  {
 var themeOptions = {
   cdn: "https://cdn.jsdelivr.net/gh/imSamirOFFICIAL/Google-Drive-Stream",
 // Theme version number
-  version: "11.22.38",
+  version: "11.22.39",
 //Optional default system language: en/zh-chs/zh-cht
   languages: "en",
   render: {
