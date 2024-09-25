@@ -1010,23 +1010,6 @@ function file_others(name, encoded_name, size, url, file_id, cookie_folder_id) {
             <div class="card-body text-center">
               <div class="${UI.file_view_alert_class}" id="file_details" role="alert">${name}<br>${size}</div>
             </div>
-            <div class="card-body">
-            <div class="input-group mb-4">
-              <input type="text" class="form-control" id="dlurl" value="${url}" readonly>
-            </div>
-            <div class="card-text text-center">
-            <div class="btn-group text-center">
-                <a href="${url}" type="button" class="btn btn-primary">Download</a>
-                <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="sr-only"></span>
-                </button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="intent:${url}#Intent;component=idm.internet.download.manager/idm.internet.download.manager.Downloader;S.title=${encoded_name};end">1DM (Free)</a>
-                  <a class="dropdown-item" href="intent:${url}#Intent;component=idm.internet.download.manager.adm.lite/idm.internet.download.manager.Downloader;S.title=${encoded_name};end">1DM (Lite)</a>
-                  <a class="dropdown-item" href="intent:${url}#Intent;component=idm.internet.download.manager.plus/idm.internet.download.manager.Downloader;S.title=${encoded_name};end">1DM+ (Plus)</a>
-                </div>
-            </div>
-            </div>
             <br></div>`;
     $("#content").html(content);
 }
